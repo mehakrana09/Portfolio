@@ -3,33 +3,17 @@
 import { useState } from 'react'
 import Education from './Education'
 import Skills from './Skills'
-import Project from './Projects'
+import Projects from './Projects'
 import Hobbies from './Hobbies'
 
-// Define the type for tabs
+// Define the type for the tabs array
 type TabItem = {
   id: string;
   label: string;
-  component: React.ComponentType<any>; // Allow components with or without props
-  projectUrl?: string; // Optional prop for tabs that need it
+  component: React.ComponentType<any>;
+  projectUrl?: string; // Make projectUrl optional
 };
 
-// Define the Projects component
-type ProjectsProps = {
-  projectUrl: string;
-};
-
-function Projects({ projectUrl }: ProjectsProps) {
-  return (
-    <div>
-      <a href={projectUrl} target="_blank" rel="noopener noreferrer">
-        {projectUrl}
-      </a>
-    </div>
-  );
-}
-
-// Define the tabs array
 const tabs: TabItem[] = [
   { id: 'education', label: 'Education', component: Education },
   { id: 'skills', label: 'Skills', component: Skills },
@@ -37,7 +21,6 @@ const tabs: TabItem[] = [
   { id: 'hobbies', label: 'Hobbies', component: Hobbies },
 ];
 
-// Main Tab Component
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState('education');
 
@@ -64,8 +47,9 @@ export default function Tabs() {
       <div className="mt-8">
         {tabs.map((tab) =>
           activeTab === tab.id ? (
-            tab.id === 'projects' ? (
-              <tab.component key={tab.id} projectUrl={tab.projectUrl} />
+            tab.id === 'projects' && tab.projectUrl ? (
+              // Pass projectUrl only if it is defined
+              <tab.component key={tab.id} projectUrl={tab.projectUrl as string} />
             ) : (
               <tab.component key={tab.id} />
             )
