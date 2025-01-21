@@ -10,7 +10,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-300">
       <Header />
       <main className="container mx-auto px-4 py-8">
-        <About resumeUrl="https://drive.google.com/file/d/16LgN_HdRro-D1m3_CZljdLqnrlWBhabw/view?usp=drive_link" />
+        <About resumeUrl="https://drive.google.com/file/d/13PC14ms0CoBMCh8eOrhKPfqkw7AmHowB/view?usp=drive_link" />
         <Tabs />
         <Contact />
         {/* <Projects projectUrl="https://drive.google.com/file/d/10n2EL-eayBLq8_98O48tRDvj0m6q-wGq/view?usp=drive_link"/> */}
