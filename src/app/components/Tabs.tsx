@@ -6,27 +6,18 @@ import Skills from './Skills'
 import Projects from './Projects'
 import Hobbies from './Hobbies'
 
-// Define the type for the tabs array
-type TabItem = {
-  id: string;
-  label: string;
-  component: React.ComponentType<any>;
-  projectUrl?: string; // Make projectUrl optional
-};
-
-const tabs: TabItem[] = [
+const tabs = [
   { id: 'education', label: 'Education', component: Education },
   { id: 'skills', label: 'Skills', component: Skills },
-  { id: 'projects', label: 'Projects', component: Projects, projectUrl: 'https://github.com/mehakrana09' },
+  { id: 'projects', label: 'Projects', component: Projects },
   { id: 'hobbies', label: 'Hobbies', component: Hobbies },
-];
+]
 
 export default function Tabs() {
-  const [activeTab, setActiveTab] = useState('education');
+  const [activeTab, setActiveTab] = useState('education')
 
   return (
     <div className="my-16">
-      {/* Tab Buttons */}
       <div className="flex border-b border-gray-200">
         {tabs.map((tab) => (
           <button
@@ -42,20 +33,12 @@ export default function Tabs() {
           </button>
         ))}
       </div>
-
-      {/* Tab Content */}
       <div className="mt-8">
-        {tabs.map((tab) =>
-          activeTab === tab.id ? (
-            tab.id === 'projects' && tab.projectUrl ? (
-              // Pass projectUrl only if it is defined
-              <tab.component key={tab.id} projectUrl={tab.projectUrl as string} />
-            ) : (
-              <tab.component key={tab.id} />
-            )
-          ) : null
-        )}
+        {tabs.map((tab) => (
+          activeTab === tab.id && <tab.component key={tab.id} />
+        ))}
       </div>
     </div>
-  );
+  )
 }
+
