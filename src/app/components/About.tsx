@@ -17,8 +17,8 @@ export default function About({ resumeUrl }: { resumeUrl: string }) {
         <div className="md:w-2/3 md:pl-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-4 hover:text-red-600">About Me</h2>
           <p className="text-gray-800 leading-relaxed">
-            I'm a passionate Computer Science student at the Punjabi University Patiala, specializing in Machine Learning and Frontend Development. 
-            Currently in my third year, I'm dedicated to creating intelligent systems and beautiful user interfaces. 
+            I am a passionate <span className='text-red-500 font-bold'>Computer Science and Engineering</span> student at the <span className='text-red-500 font-bold'>Punjabi University Patiala</span>, specializing in <span className='text-black font-bold'>Machine Learning and Frontend Development</span>. 
+            Currently in my third year, I am dedicated to creating intelligent systems and beautiful user interfaces. 
             My goal is to bridge the gap between cutting-edge AI technologies and user-friendly web applications.
           </p>
           <div className="mt-6">
