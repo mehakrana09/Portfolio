@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220; /* Light mode start color */
+  --background-end-rgb: 255, 255, 255;   /* Light mode end color */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 18, 18, 18;  /* Dark mode start color */
+    --background-end-rgb: 48, 48, 48;    /* Dark mode end color */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+}
+
+/* Additional Styling for Dark Mode */
+@media (prefers-color-scheme: dark) {
+  header, footer {
+    background: rgba(0, 0, 0, 0.85); /* Darker transparent background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  h1, h2, h3, p {
+    color: rgb(255, 255, 255); /* Bright text for dark mode */
+  }
+
+  a {
+    color: rgb(0, 122, 255); /* Bright blue for links */
+  }
+
+  a:hover {
+    color: rgb(50, 150, 255); /* Slightly lighter blue on hover */
+  }
+}
+
+/* Utility for Card Backgrounds */
+.card {
+  background: linear-gradient(
+    to bottom right,
+    rgba(var(--background-start-rgb), 0.9),
+    rgba(var(--background-end-rgb), 0.9)
+  );
+  border: 1px solid rgba(var(--foreground-rgb), 0.1);
+  box-shadow: 0 4px 6px rgba(var(--foreground-rgb), 0.1);
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 10px rgba(var(--foreground-rgb), 0.2);
+}
