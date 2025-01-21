@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Education from './Education'
 import Skills from './Skills'
-import Projects from './Projects'
+import Project from './Projects'
 import Hobbies from './Hobbies'
 
 // Define the type for tabs
@@ -19,7 +19,7 @@ type ProjectsProps = {
   projectUrl: string;
 };
 
-function Project({ projectUrl }: ProjectsProps) {
+function Projects({ projectUrl }: ProjectsProps) {
   return (
     <div>
       <a href={projectUrl} target="_blank" rel="noopener noreferrer">
